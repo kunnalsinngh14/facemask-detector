@@ -1,6 +1,6 @@
-# 😷 Real-Time Face Mask Detection using CNN (MobileNetV2)
+# 😷 Real-Time Face Mask Detection using CNN (MobileNetV2)`
 
-A deep learning-based **Face Mask Detection** system built using **TensorFlow**, **Keras**, **MobileNetV2**, **OpenCV**, and **Streamlit**. The application detects a face in an uploaded image, classifies whether the person is wearing a face mask, and displays the prediction with a confidence score.
+A deep learning-based **Face Mask Detection** system built using **TensorFlow**, **Keras**, **MobileNetV2**, **OpenCV**, and **Streamlit**. The application detects a face in an uploaded image or through webcam, classifies whether the person is wearing a face mask, and displays the prediction with a confidence score.
 
 ---
 
@@ -8,6 +8,7 @@ A deep learning-based **Face Mask Detection** system built using **TensorFlow**,
 
 * 🧠 Transfer Learning using **MobileNetV2**
 * 📷 Automatic face detection using **OpenCV Haar Cascade**
+* 🎥 **Live Webcam Support:** Real-time face tracking and mask detection through your camera!
 * 🎨 Data augmentation during training
 * ⚡ Fast inference with TensorFlow/Keras
 * 🌐 Simple and interactive Streamlit web application
@@ -76,15 +77,18 @@ Prediction
 
 ## 🚀 How It Works
 
+**📸 Image Upload Mode:**
 1. Upload an image.
-2. OpenCV detects the first face in the image.
-3. The detected face is cropped.
-4. The face is resized to **150×150**.
-5. The trained MobileNetV2 model predicts:
+2. OpenCV detects the first face in the image and crops it.
+3. The face is resized to **150×150**.
+4. The trained MobileNetV2 model predicts the mask status.
+5. The application displays the prediction along with its confidence score.
 
-   * Wearing Mask
-   * No Mask
-6. The application displays the prediction along with its confidence score.
+**🎥 Live Webcam Mode:**
+1. Click the "open camera" button in the Streamlit UI.
+2. The app hooks into your device's webcam using OpenCV.
+3. It draws a live tracking box around your face.
+4. The MobileNetV2 model predicts your mask status frame-by-frame and overlays the live percentage directly on the video feed!
 
 ---
 
@@ -122,7 +126,7 @@ The application will open automatically in your browser.
 
 ## 📷 Demo
 
-Upload an image containing a face.
+You can either **upload an image** containing a face, or click **open camera** to test it live!
 
 Example Output:
 
